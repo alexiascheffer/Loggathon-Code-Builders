@@ -1,0 +1,27 @@
+{
+	"nomeLoja":"",
+	"enderecoRua":"",
+	"enderecoNumero":"",
+	"complemento":"",
+	"bairro":"",
+	"cidade":"",
+	"estado":"",
+	"CEP":"",
+	"tipoLoja":"",
+	"nome":"",
+	"sobrenome":"",
+	"telComercial":"",
+	"telCelular":"",
+	"email":"",
+	"horaAbertura":"",
+	"horaFechamento":"",
+	"diasFuncionamento":{
+		"terça":false,
+		"segunda":false,
+		"quarta":false,
+		"quinta":false,
+		"sexta":false,
+		"sábado":false},
+		"formReady":false
+	}
+}

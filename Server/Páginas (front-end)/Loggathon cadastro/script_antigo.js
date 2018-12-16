@@ -110,7 +110,7 @@ var App = (function(_React$Component) {
         },
         required: true
       },
-      formReady: false
+      formFilled: false
     };
 
     _this.formSender = _this.formSender.bind(_this);
@@ -149,8 +149,14 @@ var App = (function(_React$Component) {
     {
       key: "cepBlur",
       value: function cepBlur() {
-        /*fetch( `http://correiosapi.apphb.com/cep/${this.state.CEP.value}`, {method: 'GET'}).then(response => {console.log(JSON.stringify(response.statusText))});
-            Não achei nenhuma API funcional*/
+        fetch("https://viacep.com.br/ws/01001000/json/unicode/", {
+          method: "GET"
+        }).then(function(response) {
+          for (let entry in response) {
+            console.log(entry);
+            console.log(JSON.stringify(response[entry]));
+          }
+        });
       }
     },
     {
@@ -185,11 +191,11 @@ var App = (function(_React$Component) {
         var inadequacyCounter = 0;
         var daysCounter = 0;
         for (var entry in this.state) {
-          if (entry !== "formReady") {
+          if (entry !== "formFilled") {
             formInfo[entry] = this.state[entry];
           }
         }
-        //console.log(JSON.stringify(formInfo));
+        console.log(JSON.stringify(formInfo));
         for (var _entry in formInfo) {
           if (formInfo[_entry].value === "" && formInfo[_entry].required) {
             console.log(
@@ -205,7 +211,7 @@ var App = (function(_React$Component) {
         }
         if (daysCounter > 0 && inadequacyCounter === 0) {
           this.setState({
-            formReady: !this.state.formReady
+            formFilled: !this.state.formFilled
           });
         } else {
           console.log(daysCounter);
@@ -221,15 +227,15 @@ var App = (function(_React$Component) {
           }
         }
         console.log(JSON.stringify(formInfo));
-        if (this.state.formReady) {
-          console.log("Enviando!");
+        if (this.state.formFilled) {
+			console.log(JSON.stringify("enviando"));
           fetch("http://localhost:5000/", {
             method: "POST",
             body: JSON.stringify(formInfo),
             headers: {
               "Content-type": "text/plain; charset=UTF-8"
             }
-          });
+          })
         }
       }
     },
@@ -523,51 +529,6 @@ var Form = function Form(props) {
               "Posto de gasolina"
             )
           )
-        ),
-        React.createElement(
-          "div",
-          { className: "form-div" },
-          React.createElement(
-            "label",
-            { className: "form-label" },
-            "Hor\xE1rio de abertura",
-            React.createElement("span", { className: "req-star" }, "*")
-          ),
-          React.createElement("input", {
-            type: "text",
-            id: "horaAbertura",
-            className: "ipt-text",
-            placeholder: "ex: 08:00",
-            onChange: props.changeHandler
-          })
-        ),
-        React.createElement(
-          "div",
-          { className: "form-div" },
-          React.createElement(
-            "label",
-            { className: "form-label" },
-            "Hor\xE1rio de fechamento",
-            React.createElement("span", { className: "req-star" }, "*")
-          ),
-          React.createElement("input", {
-            type: "text",
-            id: "horaFechamento",
-            className: "ipt-text",
-            placeholder: "ex: 20:00",
-            onChange: props.changeHandler
-          })
-        ),
-        React.createElement(
-          "div",
-          { className: "form-div" },
-          React.createElement(
-            "label",
-            { id: "dias-section-label", className: "form-label" },
-            "Dias de Funcionamento",
-            React.createElement("span", { className: "req-star" }, "*")
-          ),
-          checkboxList
         )
       ),
       React.createElement(
@@ -664,6 +625,51 @@ var Form = function Form(props) {
         ),
         React.createElement(
           "div",
+          { className: "form-div" },
+          React.createElement(
+            "label",
+            { className: "form-label" },
+            "Hor\xE1rio de abertura",
+            React.createElement("span", { className: "req-star" }, "*")
+          ),
+          React.createElement("input", {
+            type: "text",
+            id: "horaAbertura",
+            className: "ipt-text",
+            placeholder: "ex: 08:00",
+            onChange: props.changeHandler
+          })
+        ),
+        React.createElement(
+          "div",
+          { className: "form-div" },
+          React.createElement(
+            "label",
+            { className: "form-label" },
+            "Hor\xE1rio de fechamento",
+            React.createElement("span", { className: "req-star" }, "*")
+          ),
+          React.createElement("input", {
+            type: "text",
+            id: "horaFechamento",
+            className: "ipt-text",
+            placeholder: "ex: 20:00",
+            onChange: props.changeHandler
+          })
+        ),
+        React.createElement(
+          "div",
+          { className: "form-div" },
+          React.createElement(
+            "label",
+            { id: "dias-section-label", className: "form-label" },
+            "Dias de Funcionamento",
+            React.createElement("span", { className: "req-star" }, "*")
+          ),
+          checkboxList
+        ),
+        React.createElement(
+          "div",
           { id: "too-tired" },
           React.createElement(
             "div",
@@ -685,7 +691,7 @@ var Form = function Form(props) {
             { className: "form-div submit-div" },
             React.createElement(
               "button",
-              { id: "submit-btn", type: "button", onClick: props.sendForm },
+              { id: "submit-btn", type: 'button', onClick: props.sendForm },
               "Enviar!"
             )
           )

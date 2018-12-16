@@ -1,0 +1,231 @@
+$app-width: 300px;
+$app-height: 300px;
+
+/* mobile first */
+
+body {
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.section-title {
+    font-size: 25px;
+    margin: 20px 0 30px 0;
+    color: #00baff;
+    text-align: center;
+}
+
+.form-div {
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-label {
+    margin-bottom: 10px;
+}
+
+.regular-checkbox {
+	-webkit-appearance: none;
+    color: white;
+    border-radius: 0;
+    min-width: 15px;
+    min-height: 15px;
+    border: 1px solid #000;
+    outline: none;
+}
+
+.regular-checkbox:checked {
+	background-color: #00baff;
+	color: white;
+    border-style: none;
+    width: 15px;
+    height: 15px;
+}
+
+.regular-checkbox:checked:after {
+	content: '\2714';
+	font-size: 14px;
+	color: white;
+    height: 15px !important;
+    resize: none;
+    position: relative;
+    bottom: 4px;
+    left: 2px;
+}
+
+.terms-checkbox {
+    min-height: 12px;
+    min-width: 12px;
+    max-height: 12px;
+    max-width: 12px;
+}
+
+.terms-checkbox:checked:after {
+	content: '\2714';
+	font-size: 12px;
+	color: white;
+    resize: none;
+    position: relative;
+    bottom: 2px;
+    left: 1px;
+}
+
+.ipt-text, #state-select  {
+    margin-bottom: 20px;
+    width: 100%;
+    height: 35px;
+    border-style: none none solid none;
+    border-width: 1px;
+    border-color: #868e96;
+    outline: none;
+}
+
+.ipt-text:focus, #state-select:focus {
+    border-color: black;
+}
+
+.req-star {
+    color: red;
+}
+
+.dias-funcionamento {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100px;
+}
+
+.dias-label {
+    margin: 0 5px;
+}
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+
+#section-1, #section-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#page-header {
+    height: 10vh;
+    background-color: #00baff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    #return-arrow {
+        position: absolute;
+        left: 15px;
+    }
+    #page-desc {
+        font-size: 20px;
+        margin: 0;
+    }
+}
+
+#page-main {
+    min-height: 85vh;
+}
+
+#app-frame {
+    width: 100%;
+    min-height: inherit;
+}
+
+#page-footer {
+    height: 5vh;
+    background-color: #00baff
+}
+
+#termos-div {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 12px;
+    margin: 15px 0 5px; 
+    label {
+        margin: 0 0 0 5px;
+    }
+}
+
+#type-select {
+    width: 70vw;
+    outline: none;
+}
+
+.submit-div {
+    align-items: center;
+    margin-bottom: 20px;
+    #submit-btn {
+        border: none;
+        background-color: #00baff;
+        color: white;
+        border-radius: 5px;
+        height: 30px;
+        width: 65px;
+    }
+}
+
+/* desktop */
+
+@media (min-width: 756px) {
+    .form-div {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .form-label {
+        margin: 0;
+        margin-right: 20px;
+        position: relative;
+        bottom: 10px;
+    }
+    
+    .dias-label {
+        margin: 0 10px;
+        position: relative;
+        top: 0px;
+    }
+    
+    .ipt-text, #state-select  {
+        width: 40vw;
+    }
+    
+    #type-select {
+        width: 40vw;
+    }
+    
+    #dias-section-label {
+        top: 0px;
+    }
+    
+    .submit-div {
+        margin: 0;
+    }
+    
+    #termos-div {
+        margin: 0;
+        width: 300%;
+    }
+    
+    #terms-label {
+        top: 0;
+    }
+    
+    #too-tired {
+        width: 50vw;
+        display: flex;
+        margin: 20px 0;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

@@ -1,0 +1,108 @@
+.section-head {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.shipping-info {
+  padding: 10px;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+#root #app-frame {
+  min-height: inherit;
+}
+
+#root #app-frame #page-header {
+  background-color: #00baff;
+  height: 10vh;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+#root #app-frame #page-header #header-text {
+  font-size: 20px;
+}
+
+#root #app-frame #page-content {
+  min-height: 85vh;
+}
+
+#root #app-frame #page-content #accepted-box {
+  min-height: inherit;
+}
+
+#root #app-frame #page-content #accepted-box hr {
+  background-color: #00baff;
+  margin: 0;
+}
+
+#root #app-frame #page-content #accepted-box #accepted-request {
+  -webkit-box-shadow: 5px 5px 20px 3px;
+          box-shadow: 5px 5px 20px 3px;
+  border: 1px solid;
+  padding: 0 0 10px 10px;
+  margin-left: 20px;
+  max-width: 350px;
+  height: 180px;
+  position: absolute;
+  right: 35px;
+  bottom: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+#root #app-frame #page-content #accepted-box #accepted-request #exit-btn {
+  color: #00baff;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+#root #app-frame #page-content #accepted-box #accepted-request #exit-btn i {
+  pointer-events: none;
+}
+
+#root #app-frame #page-content #rejected-box {
+  min-height: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+#root #app-frame #page-content #rejected-box #reject-text {
+  font-size: 20px;
+}
+
+#root #app-frame #page-footer {
+  background-color: #00baff;
+  height: 5vh;
+}
+/*# sourceMappingURL=style.css.map */

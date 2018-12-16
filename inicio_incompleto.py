@@ -18,7 +18,7 @@ if cep[-3:] != '899':
 
 def validar_endereco():
 	#Pega informacao adicional do endereco do proprietario da loja com o GoogleMaps API
-	gmaps = googlemaps.Client(key='AIzaSyB1S9WYDMHOuPJR8Vi6rAS9dDfvufwpy_M')
+	gmaps = googlemaps.Client(key='AIzaSyB1S9WYDMHOuPJR8Vi6rAS9dDfvufw') #nÃO FUNCIONA ESTA CHAVE, GERAR OUTRA E ADD AQUI
 	geocode_result = gmaps.geocode(address+" "+number+", "+city)
 	state = geocode_result[0]['address_components'][4]['long_name']
 

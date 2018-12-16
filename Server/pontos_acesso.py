@@ -9,7 +9,7 @@ def validar_endereco(address, number, city):
 	import planilha
 
 	#Pega informacao adicional do endereco do proprietario da loja com o GoogleMaps API
-	gmaps = googlemaps.Client(key='AIzaSyB1S9WYDMHOuPJR8Vi6rAS9dDfvufwpy_M')
+	gmaps = googlemaps.Client(key='AIzaSyB1S9WYDMHOuPJR8Vi6rAS9dDfvufwp') #essa chave não funciona. Gerar outra para funcionar
 	geocode_result = gmaps.geocode(address+" "+number+", "+city)
 	state = geocode_result[0]['address_components'][4]['long_name']
 
